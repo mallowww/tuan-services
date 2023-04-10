@@ -9,3 +9,19 @@ services:
       - ./data/redis:/data
       - ./config/redis.conf:/redis.conf
     command: redis-server /redis.conf 
+
+  k6:
+    image: loadimpact/k6
+    container_name: k6
+    volumes:
+      - ./scripts:/scripts
+
+  influxdb:
+    image: influxdb:1.8.10-alpine
+    container_name: influxdb
+    environment:
+      - INFLUXDB_DB=k6
+    ports:
+      - 8086:8086
+    volumes:
+      - ./data/influxdb:/var/lib/influxdb
