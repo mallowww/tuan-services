@@ -1,2 +1,37 @@
 conflict.md
-data/redis
+# Redis data folder
+# data/redis
+
+# Grafana data folder
+# data/grafana
+
+# InfluxDB data folder
+# 
+
+
+# Other common files and folders
+*.log
+*.tmp
+*.out
+*.pid
+*.bak
+*.swp
+*.csv
+*.tsv
+*.json
+*.xml
+*.html
+*.md
+*.rst
+*.yaml
+*.yml
+*.toml
+*.conf
+*.env
+*.ini
+*.iml
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.user
+*.sln

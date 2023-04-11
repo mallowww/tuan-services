@@ -1,8 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
-	"time"
+	"os"
 
 	"github.com/labstack/echo/v4"
 )
@@ -10,8 +11,13 @@ import (
 func main() {
 	e := echo.New()
 	e.GET("/home", func(c echo.Context) error {
-		time.Sleep(time.Millisecond * 10)
+		// time.Sleep(time.Millisecond * 10)
 		return c.String(http.StatusOK, "ok")
 	})
-	e.Logger.Fatal(e.Start(":1677"))
+	err := e.Start(":8088")
+	if err != nil {
+		fmt.Println("Error starting server:", err)
+		os.Exit(1)
+	}
+
 }
