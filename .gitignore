@@ -1,5 +1,6 @@
 conflict.md
 data
+pg
 
 # Redis data folder
 # data/redis
