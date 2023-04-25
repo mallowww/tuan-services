@@ -44,16 +44,15 @@ services:
     image: mariadb
     container_name: mariadb
     environment:
-      # - MARIADB_ROOT_PASSWORD=notApengu1ndb
-      - MARIADB_ROOT_PASSWORD=password
+      - MARIADB_ROOT_PASSWORD=notApengu1ndb
       - MARIADB_DATABASE=penguin
     ports:
       - 3306:3306
     # volumes:
     #   - ./data/mariadb:/var/lib/mysql
       # - ${PWD}/data/mariadb:/var/lib/mysql
-    command: |
-      --bind-address=0.0.0.0
+    # command: |
+    #   --bind-address=0.0.0.0
 
   adminer:
     image: adminer
