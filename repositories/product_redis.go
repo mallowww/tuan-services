@@ -29,6 +29,7 @@ func (r *productRepositoryRedis) GetProduct() (products []product, err error) {
 	if err == nil {
 		json.Unmarshal([]byte(productsJson), &products)
 		if err == nil {
+			fmt.Println("redis")
 			return products, nil
 		}
 	}
